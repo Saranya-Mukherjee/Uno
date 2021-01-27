@@ -16,15 +16,17 @@ public class Game {
     public static void main(String[] args) {
         getCards();
         for (Card card : cards) {
-            System.out.println(card.getColor() +" "+card.getType());
+            System.out.println(card.makeName());
         }
 
         Card top=new Card(0,"d");
+        System.out.println("============================");
+        System.out.println("Top: "+top.makeName());
         Card[] found=top.findCards(cards);
 
         System.out.println("============================");
         for (Card card : found) {
-            System.out.println(card.getColor() +" "+card.getType());
+            System.out.println(card.makeName());
         }
     }
 

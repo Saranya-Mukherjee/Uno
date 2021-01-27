@@ -66,4 +66,39 @@ public class Card {
         return pick;
     }
 
+    public String makeName(){
+        String name="";
+
+        switch (this.getColor()){
+            case 0:
+                name+="red";break;
+            case 1:
+                name+="green";break;
+            case 2:
+                name+="blue";break;
+            case 3:
+                name+="yellow";break;
+            case 4:
+                name+="wild";return name;
+            case 5:
+                name+="wild draw 4";return name;
+        }
+        name+=" ";
+
+        if(this.getType().equals("r")){
+            name+="reverse";
+        }
+        else if(this.getType().equals("d")){
+            name+="draw 2";
+        }
+        else if(this.getType().equals("s")){
+            name+="skip";
+        }
+        else{
+            name+=this.getType();
+        }
+
+        return name;
+    }
+
 }
